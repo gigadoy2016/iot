@@ -1,0 +1,8 @@
+body{  margin: 5px;}
+div{ margin:10px;}
+
+#gageDHT_1, #gageDHT_2 {
+  width:400px; height:320px;
+  display: inline-block;
+  margin: 1em;
+}

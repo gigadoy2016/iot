@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html ng-app="application">
+  <head>
+    <title>Auto-adjust</title>
+  	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/angular.min.js"></script>
+    <script src="js/raphael-2.1.4.min.js"></script>
+    <script src="js/justgage.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+      <script>
+      // --------- Define variable -----------
+          var data ;
+
+          var mqtt_config = {
+            mqtt_server: "m11.cloudmqtt.com",
+            mqtt_websockets_port: 35507,
+            mqtt_user: "monitor",
+            mqtt_password: "123456789",
+            mqtt_subscript_topic: "DEVICE/01/status/",
+            mqtt_public_topic: "DEVICE/01/command/"
+          };
+
+          var MQTTclient = new Paho.MQTT.Client(config.mqtt_server, config.mqtt_websockets_port, "web_" + parseInt(Math.random() * 100, 10));
+    //----------------------------------------
+          (function(){
+              var app = angular.module('application', []);
+              app.controller('deviceController', function ($scope,$http) {
+                $http({
+                  method : "GET",
+                  url : "DATA/device.config.json"
+                }).then(function mySucces(response) {
+                  $scope.device = data = response.data;
+                }, function myError(response) {
+                  $scope.device = response.statusText;
+                });
+              });
+          })();
+
+
+      </script>
+  </head>
+  <body ng-controller="deviceController">
+    <div id="container">
+      <div>
+        <label>log :</label><label>{{device}}</label>
+      </div>
+      <div>
+        <label class="btn"> System </label><label class="btn btn-warning"> Off line.</label>
+
+      </div>
+    </div>
+    <div>
+      <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="http://api.thingspeak.com/channels/62976/charts/1?width=450&height=260&dynamic=true&title=iDuck" ></iframe>
+      <div id="gageDHT_1"></div>
+    </div>
+    <div>
+      <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/62976/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line"></iframe>
+      <div id="gageDHT_2"></div>
+    </div>
+    <script>
+      window.onload = function(){
+        var gageDHT_1 = new JustGage({
+          id: "gageDHT_1",
+          value: 40,
+          min: 20,
+          max: 50,
+          title: "°C",
+          label: "อุณหภูมิ"
+        });
+        var gageDHT_2 = new JustGage({
+          id: "gageDHT_2",
+          value: 40,
+          min: 20,
+          max: 50,
+          title: "%",
+          label: "ความชื้น"
+        });
+      }
+    </script>
+  </body>
+</html>
