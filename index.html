@@ -13,36 +13,21 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
 
       <script>
       // --------- Define variable -----------
           var data ;
-
-          var mqtt_config = {
+          var config_MQTT = {
             mqtt_server: "m11.cloudmqtt.com",
             mqtt_websockets_port: 35507,
             mqtt_user: "monitor",
             mqtt_password: "123456789",
-            mqtt_subscript_topic: "DEVICE/01/status/",
-            mqtt_public_topic: "DEVICE/01/command/"
+            mqtt_topic: "DEVICE/01/status/"
           };
 
-          var MQTTclient = new Paho.MQTT.Client(config.mqtt_server, config.mqtt_websockets_port, "web_" + parseInt(Math.random() * 100, 10));
+          var mqtt_client = new Paho.MQTT.Client(config_MQTT.mqtt_server, config_MQTT.mqtt_websockets_port, "test");
     //----------------------------------------
-          (function(){
-              var app = angular.module('application', []);
-              app.controller('deviceController', function ($scope,$http) {
-                $http({
-                  method : "GET",
-                  url : "DATA/device.config.json"
-                }).then(function mySucces(response) {
-                  $scope.device = data = response.data;
-                }, function myError(response) {
-                  $scope.device = response.statusText;
-                });
-              });
-          })();
-
 
       </script>
   </head>
@@ -52,7 +37,7 @@
         <label>log :</label><label>{{device}}</label>
       </div>
       <div>
-        <label class="btn"> System </label><label class="btn btn-warning"> Off line.</label>
+        <label class="btn btn-warning" id="system_connection">System</label>
 
       </div>
     </div>
@@ -82,6 +67,25 @@
           title: "%",
           label: "ความชื้น"
         });
+
+  			mqtt_client.connect({
+  				useSSL: true,
+  				userName: config_MQTT.mqtt_user,
+  				password: config_MQTT.mqtt_password,
+  				onSuccess: function() {			// Once a connection has been made, make a subscription and send a message.
+  					console.log("onConnect MQTT subscribe");
+  					mqtt_client.subscribe(config.mqtt_topic);
+  				},
+  				onFailure: function(e) {
+            console.log("MQTT Connection losed");
+  			 		console.log(e);
+  				}
+  			});
+
+        mqtt_client.onMessageArrived = function(message) {
+          messageSubscrip = JSON.parse(message.payloadString);
+          console.log(message.payloadString);
+        }
       }
     </script>
   </body>
