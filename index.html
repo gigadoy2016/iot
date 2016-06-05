@@ -13,20 +13,28 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/scriptMQTT.js"></script>
+    <script src="js/device.js"></script>
     <script src="js/script.js"></script>
 
       <script>
       // --------- Define variable -----------
           var data ;
-          var config_MQTT = {
+          var gageDHT_1,gageDHT_2;
+          var config = {
             mqtt_server: "m11.cloudmqtt.com",
             mqtt_websockets_port: 35507,
             mqtt_user: "monitor",
             mqtt_password: "123456789",
             mqtt_topic: "DEVICE/01/status/"
           };
-
-          var mqtt_client = new Paho.MQTT.Client(config_MQTT.mqtt_server, config_MQTT.mqtt_websockets_port, "test");
+          var MQTTclient = new Paho.MQTT.Client(config.mqtt_server, config.mqtt_websockets_port, "test");
+          window.onload = function(){
+            init();
+            $("#system_connection").click(function(){
+              MQTT_connect();
+            });
+          };
     //----------------------------------------
 
       </script>
@@ -38,8 +46,16 @@
       </div>
       <div>
         <label class="btn btn-warning" id="system_connection">System</label>
-
+        <label class="btn btn-warning" id="device_connection">device</label>
+        <label id="system_detail"></label>
       </div>
+      <div>
+        <label> Data </label><label id ="device01_message"></label>
+      </div>
+    </div>
+    <div>
+      <button type="button" class="btn btn-secondary-outline" onClick="openDevice();">ON</button>
+      <button class="btn btn-primary-outline" conclick="closedDevice();">OFF</button>
     </div>
     <div>
       <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="http://api.thingspeak.com/channels/62976/charts/1?width=450&height=260&dynamic=true&title=iDuck" ></iframe>
@@ -49,44 +65,13 @@
       <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/62976/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line"></iframe>
       <div id="gageDHT_2"></div>
     </div>
-    <script>
-      window.onload = function(){
-        var gageDHT_1 = new JustGage({
-          id: "gageDHT_1",
-          value: 40,
-          min: 20,
-          max: 50,
-          title: "°C",
-          label: "อุณหภูมิ"
-        });
-        var gageDHT_2 = new JustGage({
-          id: "gageDHT_2",
-          value: 40,
-          min: 20,
-          max: 50,
-          title: "%",
-          label: "ความชื้น"
-        });
-
-  			mqtt_client.connect({
-  				useSSL: true,
-  				userName: config_MQTT.mqtt_user,
-  				password: config_MQTT.mqtt_password,
-  				onSuccess: function() {			// Once a connection has been made, make a subscription and send a message.
-  					console.log("onConnect MQTT subscribe");
-  					mqtt_client.subscribe(config.mqtt_topic);
-  				},
-  				onFailure: function(e) {
-            console.log("MQTT Connection losed");
-  			 		console.log(e);
-  				}
-  			});
-
-        mqtt_client.onMessageArrived = function(message) {
-          messageSubscrip = JSON.parse(message.payloadString);
-          console.log(message.payloadString);
-        }
-      }
-    </script>
+    <div>
+      <button type="button" class="btn btn-primary-outline">Primary</button>
+<button type="button" class="btn btn-secondary-outline">Secondary</button>
+<button type="button" class="btn btn-success-outline">Success</button>
+<button type="button" class="btn btn-info-outline">Info</button>
+<button type="button" class="btn btn-warning-outline">Warning</button>
+<button type="button" class="btn btn-danger-outline">Danger</button>
+    </div>
   </body>
 </html>
