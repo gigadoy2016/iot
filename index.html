@@ -45,7 +45,7 @@
         <label>log :</label><label>{{device}}</label>
       </div>
       <div>
-        <label class="btn btn-warning" id="system_connection">System</label>
+        <label class="btn btn-warning" id="system_connection">{{system_MQTT_status}}</label>
         <label class="btn btn-warning" id="device_connection">device</label>
         <label id="system_detail"></label>
       </div>
@@ -56,6 +56,10 @@
     <div>
       <button type="button" class="btn btn-secondary-outline" onClick="openDevice();">ON</button>
       <button class="btn btn-primary-outline" conclick="closedDevice();">OFF</button>
+      <div class="btn-group" role="group" aria-label="...">
+        <button type="button" class="btn btn-default active">ON</button>
+        <button type="button" class="btn btn-default">OFF</button>
+      </div>
     </div>
     <div>
       <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="http://api.thingspeak.com/channels/62976/charts/1?width=450&height=260&dynamic=true&title=iDuck" ></iframe>

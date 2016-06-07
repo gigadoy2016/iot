@@ -10,6 +10,7 @@
         $scope.device = response.statusText;
       });
 
+      
 
     });
 })(window.angular);
