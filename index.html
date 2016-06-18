@@ -8,19 +8,22 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <script src="js/angular.min.js"></script>
     <script src="js/raphael-2.1.4.min.js"></script>
+
+    <script src="js/jquery.js"></script>
     <script src="js/justgage.js"></script>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <script src="js/scriptMQTT.js"></script>
     <script src="js/device.js"></script>
     <script src="js/script.js"></script>
 
+
       <script>
       // --------- Define variable -----------
           var data ;
           var gageDHT_1,gageDHT_2;
+          var system = {
+            system_MQTT_status :0
+          };
           var config = {
             mqtt_server: "m11.cloudmqtt.com",
             mqtt_websockets_port: 35507,
@@ -40,42 +43,98 @@
       </script>
   </head>
   <body ng-controller="deviceController">
-    <div id="container">
+    <div id="container" class="col-xs-12 col-md-12">
+      <!--
       <div>
         <label>log :</label><label>{{device}}</label>
+      </div>-->
+      <div class="row">
+        <div class="col-md-8">
+          <label class="btn btn-warning" id="system_connection">SYSTEM</label>
+          <label class="btn btn-warning" id="device_connection">device</label>
+          <label id="system_detail"></label>
+        </div>
+        <div class="col-md-4">
+          <label> Data </label><label id ="device01_message"></label>
+        </div>
       </div>
-      <div>
-        <label class="btn btn-warning" id="system_connection">{{system_MQTT_status}}</label>
-        <label class="btn btn-warning" id="device_connection">device</label>
-        <label id="system_detail"></label>
+      <div class="row">
+
       </div>
-      <div>
-        <label> Data </label><label id ="device01_message"></label>
+      <div class="row">
+        <!-- Channel 1-->
+        <div class="col-lg-3 col-md-6">
+          <div class="panel panel-primary">
+              <div class="panel-heading">
+                  <div class="row">
+                      <div class="col-xs-3">
+                          <i class="fa fa-comments fa-5x"></i>
+                      </div>
+                      <div class="col-xs-9 text-right">
+                          <div class="huge">Chanel #1</div>
+                      </div>
+                  </div>
+              </div>
+              <a href="#">
+                  <div class="panel-footer">
+                      <span class="pull-left">
+                        <div class="btn-group" >
+                          <button type="button" id="buttonON" class="btn btn-default" onClick="openDevice();">ON</button>
+                          <button type="button" id="buttonOFF" class="btn btn-default" onclick="closedDevice();">OFF</button>
+                        </div>
+                      </span>
+                      <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                      <div class="clearfix"></div>
+                  </div>
+              </a>
+          </div>
+        </div>
+        <!-- Channel 1-->
+
+        <!-- Channel 2-->
+        <div class="col-lg-3 col-md-6">
+          <div class="panel panel-primary">
+              <div class="panel-heading">
+                  <div class="row">
+                      <div class="col-xs-3">
+                          <i class="fa fa-comments fa-5x"></i>
+                      </div>
+                      <div class="col-xs-9 text-right">
+                          <div class="huge">Chanel #2</div>
+                      </div>
+                  </div>
+              </div>
+              <a href="#">
+                  <div class="panel-footer">
+                      <span class="pull-left">
+                        <div class="btn-group" >
+                          <button type="button" id="buttonON_2" class="btn btn-default" onClick="openDevice();">ON</button>
+                          <button type="button" id="buttonOFF_2" class="btn btn-default" onclick="closedDevice();">OFF</button>
+                        </div>
+                      </span>
+                      <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                      <div class="clearfix"></div>
+                  </div>
+              </a>
+          </div>
+        </div>
+        <!-- Channel 1-->
+
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-4">
+            <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="http://api.thingspeak.com/channels/62976/charts/1?width=450&height=260&dynamic=true&title=iDuck" ></iframe>
+        </div>
+        <div id="gageDHT_1"  class="col-xs-12 col-sm-4"></div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-4">
+          <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/62976/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line"></iframe>
+        </div>
+        <div id="gageDHT_2"  class="col-xs-12 col-sm-4"></div>
       </div>
     </div>
-    <div>
-      <button type="button" class="btn btn-secondary-outline" onClick="openDevice();">ON</button>
-      <button class="btn btn-primary-outline" conclick="closedDevice();">OFF</button>
-      <div class="btn-group" role="group" aria-label="...">
-        <button type="button" class="btn btn-default active">ON</button>
-        <button type="button" class="btn btn-default">OFF</button>
-      </div>
-    </div>
-    <div>
-      <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="http://api.thingspeak.com/channels/62976/charts/1?width=450&height=260&dynamic=true&title=iDuck" ></iframe>
-      <div id="gageDHT_1"></div>
-    </div>
-    <div>
-      <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/62976/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line"></iframe>
-      <div id="gageDHT_2"></div>
-    </div>
-    <div>
-      <button type="button" class="btn btn-primary-outline">Primary</button>
-<button type="button" class="btn btn-secondary-outline">Secondary</button>
-<button type="button" class="btn btn-success-outline">Success</button>
-<button type="button" class="btn btn-info-outline">Info</button>
-<button type="button" class="btn btn-warning-outline">Warning</button>
-<button type="button" class="btn btn-danger-outline">Danger</button>
-    </div>
+
   </body>
 </html>

@@ -1,4 +1,3 @@
-var scopeHost;
 (function(){
     var app = angular.module('application', []);
     app.controller('deviceController', function ($scope,$http) {
@@ -10,6 +9,9 @@ var scopeHost;
       }, function myError(response) {
         $scope.device = response.statusText;
       });
+
+      
+
     });
 })(window.angular);
 
@@ -29,7 +31,7 @@ function init(){
     value: 0,
     decimals: true,
     min: 20,
-    max: 60,
+    max: 50,
     title: "%",
     label: "ความชื้น"
   });
@@ -68,7 +70,6 @@ function onConnect() {
   MQTTclient.subscribe(config.mqtt_topic);
   $("#system_connection").text("System ON").removeClass().addClass("btn btn-success");
   $("#system_detail").text("");
-  //console.log(app);
 }
 
 function lostConnection(errorMessage){
@@ -84,31 +85,18 @@ function displayData(data){
   $("#device_connection").text("device ON").removeClass().addClass("btn btn-success");
   gageDHT_1.refresh(data.temp);
   gageDHT_2.refresh(data.Hum);
-  showLED(data.led_01);
   clearTimeout(myDevice_status);
-  myDevice_status = setTimeout(function(){ $("#device_connection").text("device LOST").removeClass().addClass("btn btn-warning"); }, 20000);
+  myDevice_status = setTimeout(function(){   $("#device_connection").text("device LOST").removeClass().addClass("btn btn-warning"); }, 20000);
 }
 
 function openDevice(){
   message = new Paho.MQTT.Message('{"deviceID":"0001","led_01":1}');
   message.destinationName = "DEVICE/01/command/";
   MQTTclient.send(message);
-  showLED(1);
 }
 
 function closedDevice(){
   message = new Paho.MQTT.Message('{"deviceID":"0001","led_01":0}');
   message.destinationName = "DEVICE/01/command/";
   MQTTclient.send(message);
-  showLED(0);
-}
-
-function showLED(statusLED){
-  if(statusLED ==1 ){
-    $("#buttonON").removeClass().addClass("btn btn-primary");
-    $("#buttonOFF").removeClass().addClass("btn btn-default");
-  }else if (statusLED ==0){
-    $("#buttonON").removeClass().addClass("btn btn-default");
-    $("#buttonOFF").removeClass().addClass("btn btn-primary");
-  }
 }
