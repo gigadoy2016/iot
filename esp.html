@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html ng-app="iotApp">
+  <head>
+    <title>Internet Of Thing.</title>
+  	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/angular.min.js"></script>
+    <script src="js/raphael-2.1.4.min.js"></script>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/justgage.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scriptMQTT.js"></script>
+    <script src="js/device.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+      var config = {
+        mqtt_server: "m11.cloudmqtt.com",
+        mqtt_websockets_port: 35507,
+        mqtt_user: "monitor",
+        mqtt_password: "123456789",
+        mqtt_topic: "DEVICE/01/status/"
+      };
+
+      //var MQTTclient = new Paho.MQTT.Client(config.mqtt_server, config.mqtt_websockets_port, "test");
+      //MQTT_connect();
+    </script>
+
+  </head>
+  <body ng-controller="SystemController as device" >
+    <div class="row">
+      <div class="col-md-8">
+        <label ng-class="device.connectionSystem ?'btn btn-success':'btn btn-warning'">SYSTEM {{ device.connectionSystem ? 'ON' : 'OFF' }}</label>
+        <label class="btn btn-warning" ng-click="device.test();">device</label>
+        <label id="system_detail"></label>
+      </div>
+    </div>
+  </body>
+</html>
