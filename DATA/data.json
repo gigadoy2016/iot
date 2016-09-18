@@ -1,0 +1,29 @@
+{
+	"embedded_01":{
+		"sensor":{
+			"DHT22":{
+				"id":"01",
+				"temperature":25.25,
+				"humidity":52.00
+			},"LDR":{
+				"id":"01",
+				"value":"4.00"
+			},"SoilMoisture":{
+				"id":"01",
+				"value":3.38
+			}
+		},
+		"output":{
+			"relay":{
+				"id":"01",
+				"status":[0,0,0,0],
+				"detail":"relay 4 chanel (china)"
+			}
+		},
+		"date":"17/08/2016 15:13:00",
+		"location":{
+			"lat":"test",
+			"lng":"test"
+		}
+	}
+}

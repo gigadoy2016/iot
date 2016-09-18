@@ -1,0 +1,22 @@
+{
+  "relay":[{
+    "id":1,
+    "time":"15:40:30",
+    "date":"23/08/2016",
+    "condition_on":
+    [
+      {
+        "condition_id":"01",
+        "type":"timmer",
+        "operator":">",
+        "value":"14:38",
+      },{
+        "condition_id":"02",
+        "type":"timmer",
+        "operator":">",
+        "value":"14:38",
+        "operator_condition":"OR"
+      }
+    ]
+  }]
+}

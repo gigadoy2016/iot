@@ -1,18 +1,19 @@
 var system;
 (function(){
     var app = angular.module('iotApp', []);
-    app.controller('SystemController', function () {
+    app.controller('SystemController', function ($scope) {
+    var MQTTclient = new Paho.MQTT.Client(config.mqtt_server, config.mqtt_websockets_port, "test");
 
-      var MQTTclient = new Paho.MQTT.Client(config.mqtt_server, config.mqtt_websockets_port, "test");
+
       this.connectionSystem = false;
 
-      /*this.test = function(){
+      this.test = function(){
         console.log("click");
         this.connectionSystem = true;
-        this.MQTT_connect();
-      };*/
+        $scope.MQTT_connect();
+      };
 
-      this.MQTT_connect = function(){
+      $scope.MQTT_connect = function(){
           MQTTclient.connect({
             useSSL: true,
             userName: config.mqtt_user,
@@ -46,7 +47,10 @@ var system;
         this.connectionSystem = false;
       }
 
-
+      window.onload = function() {
+         console.log("onload");
+         $scope.MQTT_connect();
+      };
     });
 
 })(window.angular);
