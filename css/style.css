@@ -22,7 +22,7 @@ P.controller-log        { font-size:11px; overflow:auto; height:50px;}
 P.controller-log-2      { font-size:10px; overflow:auto; height:45px; }
 label.ctrl-con          { width:179px; }
 label.ctrl-status       { color:#FFF ; background:#6c6c6c ; width:40px; text-align:center}
-BUTTON.device-config	{ margin-left:109px;}
+BUTTON.device-config	{ margin-left:105px;}
 
 option 					{ padding-left:30px; height:50px; }
 option.thermometer 		{ background:url(icons/thermometer.png)0 0 no-repeat; }
@@ -30,6 +30,14 @@ option.humidity 		{ background:url(icons/weather-downpour.png)0 0 no-repeat; }
 option.lighting 		{ background:url(icons/weather-sunny.png)0 0 no-repeat; }
 option.thermometer 		{ background:url(icons/thermometer.png)0 0 no-repeat; }
 option.operator			{ font-size: 20px; font-weight: bold; }
+
+.ui-tabs-vertical 					{ width: 40em; }
+.ui-tabs-vertical .ui-tabs-nav 		{ padding: .2em .1em .2em .2em; float: left; width: 12em; }
+.ui-tabs-vertical .ui-tabs-nav li 	{ clear: left; width: 100%; border-bottom-width: 1px !important; border-right-width: 0 !important; margin: 0 -1px .2em 0; }
+.ui-tabs-vertical .ui-tabs-nav li a { display:block; }
+.ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active { padding-bottom: 0; padding-right: .1em; border-right-width: 1px; }
+.ui-tabs-vertical .ui-tabs-panel 	{ padding-left: 5px; }
+.ui-tabs-panel2			{margin-left : 160px; border:1px dotted gray; height:200px; padding:1em}
 
 input.limitSensor		{height:50px; width:80px;text-align: right}
 

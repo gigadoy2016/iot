@@ -7,11 +7,13 @@
 class RelayComponent{
 
   constructor(id){
-    this.ID = id;
-    this.STATUS = false;
-    this.DETAIL = null;
-    this.LOG = [];
-    this.CONDITION =[];
+    this.ID         = id;
+    this.STATUS     = false;
+    this.DETAIL     = null;
+    this.LOG        = [];
+    this.CONDITION  = [];
+
+    this.TOPIC      = "DEVICE/01/command/";
 
     if (id !== null && id !== undefined) {      
       this.node = document.getElementById(id).innerHTML =this.genHTML(this);
@@ -28,14 +30,25 @@ class RelayComponent{
     var obj = this;
     
     // interface event click ON
-    document.getElementById(this.ID+'_on').onclick = function(){obj.ON();};
+    document.getElementById(this.ID+'_on').onclick = function(){ 
+      obj.ON();
+      mqttSend(obj.ID,obj.TOPIC,obj.STATUS);
+      console.log("mqttSend:"+obj.TOPIC+"ON");
+    };
   
     // interface event click OFF
-    document.getElementById(this.ID+'_off').onclick = function(){obj.OFF();};
+    document.getElementById(this.ID+'_off').onclick = function(){
+      obj.OFF();
+      mqttSend(obj.ID,obj.TOPIC,obj.STATUS);
+      console.log("mqttSend:"+obj.TOPIC+"OFF");
+    };
 
     document.getElementById(this.ID+'_config').onclick = function(){obj.showConfigCondition()};
 
     document.getElementById(this.ID+'_addCon').onclick = function(){obj.addConditon()};
+
+    $( "#tabs-"+this.ID ).tabs().addClass( "ui-tabs-vertical ui-helper-clearfix " );
+    $( "#tabs-"+this.ID+" li" ).removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
     
     this.getLogCondition();
   }
@@ -78,6 +91,7 @@ class RelayComponent{
   }
   // Display Condition.
   getLogCondition(){
+    
     let obj = this;
     let conditions = this.CONDITION;
     let txt='';
@@ -106,10 +120,24 @@ class RelayComponent{
   genHTML(){
     let id = this.ID;
 
-    let optionSensor = '';
+    let optionSensor  = '';
+    let optionSensor2 = '';
     for(let i=0; sensors.length > i ;i++){
       optionSensor += `<option value="${i}" class="${sensors[i].type}" >${sensors[i].name}</option>`;
+      optionSensor2+= `<li><a href="#tabs-${this.ID}-1">${sensors[i].name}</a></li>`;
     }
+
+    let ITEM= 
+           `<label for="selectSensor">Select a sensor</label>
+            <select name="selectSensor" id="selectSensor-${this.ID}"> ${optionSensor} </select>
+            <br/>
+            <select name="selectOperator" id="selectOperator-${this.ID}">
+              <option class="operator" value=">" > > </option>
+              <option class="operator" value="=" > = </option>
+              <option class="operator" value="<" > < </option>
+            </select>
+            <input type="text" class="limitSensor" value="0" id="limitSensor-${this.ID}"/>
+            `;
 
 
     var text =`
@@ -132,29 +160,24 @@ class RelayComponent{
         <div id="ctrl-control-${this.ID}" style="display:none">
 
           <fieldset>
-            <label for="selectSensor">Select a sensor</label>
-            <select name="selectSensor" id="selectSensor-${this.ID}"> ${optionSensor} </select>
-            <br/>
-            <select name="selectOperator" id="selectOperator-${this.ID}">
-              <option class="operator" value=">" > > </option>
-              <option class="operator" value="=" > = </option>
-              <option class="operator" value="<" > < </option>
-            </select>
-            <input type="text" class="limitSensor" value="0" id="limitSensor-${this.ID}"/>
+            ${ITEM}
             <br/>
             <div>
+
               <!-- Rounded switch -->
               <label>OFF</label>
               <label class="switch"><input type="checkbox" checked id="${this.ID}_OnOff" ><div class="slider round"></div></label>
               <label>ON</label>
+              <button id="${this.ID}_addCon">ADD</button>
             </div>
-            <br/>
-            <button id="${this.ID}_addCon">ADD</button>
           </fieldset>
         </div>
         `;
+    
+
     return text;
   }
+
 
 // ---------------------------------- Dialog ------------------------------------
 
@@ -163,8 +186,8 @@ class RelayComponent{
 
     $(id).dialog({
         modal:true,
-        width:500,
-        height:300,
+        width:600,
+        height:400,
         title:'"'+this.ID +'"'+ " Configuration."
     });
   }
@@ -210,3 +233,4 @@ class RelayComponent{
 //-------------------------------------------------------------------------------
 }
 //================= End Class Device ============================================
+

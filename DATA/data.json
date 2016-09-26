@@ -3,14 +3,14 @@
 		"sensor":{
 			"DHT22":{
 				"id":"01",
-				"temperature":25.25,
-				"humidity":52.00
+				"temperature":30,
+				"humidity":30
 			},"LDR":{
 				"id":"01",
-				"value":"4.00"
+				"value":0
 			},"SoilMoisture":{
 				"id":"01",
-				"value":3.38
+				"value":0
 			}
 		},
 		"output":{
