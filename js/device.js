@@ -6,7 +6,9 @@
 
 class RelayComponent{
 
-  constructor(id){
+  constructor(id,number){
+    this.TYPE       ="relay";
+    this.NUMBER     = number;
     this.ID         = id;
     this.STATUS     = false;
     this.DETAIL     = null;
@@ -15,7 +17,7 @@ class RelayComponent{
 
     this.TOPIC      = "DEVICE/01/command/";
 
-    if (id !== null && id !== undefined) {      
+    if (id !== null && id !== undefined) {
       this.node = document.getElementById(id).innerHTML =this.genHTML(this);
       this.init();
     }else{
@@ -23,24 +25,24 @@ class RelayComponent{
       return false;
     }
 
-    
+
   }
 
   init(){
     var obj = this;
-    
+
     // interface event click ON
-    document.getElementById(this.ID+'_on').onclick = function(){ 
+    document.getElementById(this.ID+'_on').onclick = function(){
       obj.ON();
-      mqttSend(obj.ID,obj.TOPIC,obj.STATUS);
-      console.log("mqttSend:"+obj.TOPIC+"ON");
+      mqttSend(obj.NUMBER,obj.TOPIC,obj.TYPE,obj.STATUS);
+      //console.log("mqttSend:"+obj.TOPIC+"ON");
     };
-  
+
     // interface event click OFF
     document.getElementById(this.ID+'_off').onclick = function(){
       obj.OFF();
-      mqttSend(obj.ID,obj.TOPIC,obj.STATUS);
-      console.log("mqttSend:"+obj.TOPIC+"OFF");
+      mqttSend(obj.NUMBER,obj.TOPIC,obj.TYPE,obj.STATUS);
+      //console.log("mqttSend:"+obj.TOPIC+"OFF");
     };
 
     document.getElementById(this.ID+'_config').onclick = function(){obj.showConfigCondition()};
@@ -49,7 +51,7 @@ class RelayComponent{
 
     $( "#tabs-"+this.ID ).tabs().addClass( "ui-tabs-vertical ui-helper-clearfix " );
     $( "#tabs-"+this.ID+" li" ).removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
-    
+
     this.getLogCondition();
   }
 
@@ -91,7 +93,7 @@ class RelayComponent{
   }
   // Display Condition.
   getLogCondition(){
-    
+
     let obj = this;
     let conditions = this.CONDITION;
     let txt='';
@@ -109,7 +111,7 @@ class RelayComponent{
       document.getElementById('ctrl-condition-'+this.ID).innerHTML= txt;
 
       for(let i=0;conditions.length >i ; i++)
-        document.getElementById(conditions[i].ID).onclick =  function(){obj.deleteCon(i);}; 
+        document.getElementById(conditions[i].ID).onclick =  function(){obj.deleteCon(i);};
     }else{
       document.getElementById('ctrl-condition-'+this.ID).innerHTML= '';
     }
@@ -127,7 +129,7 @@ class RelayComponent{
       optionSensor2+= `<li><a href="#tabs-${this.ID}-1">${sensors[i].name}</a></li>`;
     }
 
-    let ITEM= 
+    let ITEM=
            `<label for="selectSensor">Select a sensor</label>
             <select name="selectSensor" id="selectSensor-${this.ID}"> ${optionSensor} </select>
             <br/>
@@ -173,7 +175,7 @@ class RelayComponent{
           </fieldset>
         </div>
         `;
-    
+
 
     return text;
   }
@@ -202,11 +204,11 @@ class RelayComponent{
 
     if(this.CONDITION.length < 3){
       this.addCon(id,oper,val,status);
-      $(dialog_id).dialog("close");  
+      $(dialog_id).dialog("close");
     }else{
       alert("Can not over 3 conditions.");
     }
-    
+
     //console.log(this.CONDITION);
   }
 
@@ -227,10 +229,9 @@ class RelayComponent{
     if (r == true) {
       this.CONDITION.splice(id,1);
       this.getLogCondition();
-    } 
+    }
   }
 
 //-------------------------------------------------------------------------------
 }
 //================= End Class Device ============================================
-

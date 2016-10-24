@@ -24,9 +24,10 @@ function MQTT_connect(){
 
   MQTTclient.onMessageArrived = function(message) {
     data = (typeof message =='object')?JSON.parse(message.payloadString):message.payloadString;
-    console.log(data);
+    displaySubscription(data);
+    //console.log(data);
   }
-  
+
   MQTTclient.onConnectionLost = function(responseObject){           // called when the client loses its connection
     if (responseObject.errorCode !== 0) {
       console.log("onConnectionLost:"+responseObject.errorMessage);
@@ -50,13 +51,21 @@ function lostConnection(errorMessage){
 
 function displaySubscription(data){
     console.log(data);
+    gage_DHT22_temperature.refresh(data.DHT22.temp);
+    gage_DHT22_humidity.refresh(data.DHT22.hum);
+    gage_LDT.refresh(data.LDR);
+    gage_ground_humidity.refresh(data.humG);
+    //console.log(data.DHT22.temperature);
 }
 
-function mqttSend(ID,topic, msg) {
-    var message = new Paho.MQTT.Message(`{"ID":"${ID}","status":${msg}}`);
+function mqttSend(ID,topic,type, msg) {
+    let txt     = `{"ID":"${ID}",TYPE:"${type}","status":"${msg}"}`;
+    console.log("MQTT->"+txt);
+    var message = new Paho.MQTT.Message(txt);
     message.destinationName = topic;
-    MQTTclient.send(message); 
+    MQTTclient.send(message);
 }
+
 
 
 
@@ -163,7 +172,7 @@ window.onload = function() {
     window.myLine = new Chart(ctx_1, temperatureData);
     window.myLine = new Chart(ctx_2, humidityData);
     window.myLine = new Chart(ctx_3, lightingData);
-    
+
 
     gage_DHT22_temperature = new JustGage({
         id      : "gage_DHT22_temperature",
@@ -190,8 +199,8 @@ window.onload = function() {
         value   : SENSOR.LDR.value,
         decimals: true,
         min     : 0,
-        max     : 4,
-        title   : "Lighting LDT sensor",
+        max     : 5,
+        title   : "Lighting LDR sensor",
         label   : "%"
     });
 
@@ -200,7 +209,7 @@ window.onload = function() {
         value   : SENSOR.SoilMoisture.value,
         decimals: true,
         min     : 0,
-        max     : 4,
+        max     : 5,
         title   : "humidity(Ground)",
         label   : "%"
     });
@@ -214,7 +223,7 @@ window.onload = function() {
     |  Script for screen.
     ==============================================*/
     //show_Openning_Dialog();
-    startTime(); 
+    startTime();
     MQTT_connect();
     let STATUS = DATA.embedded_01.output.relay;
     //relay[0].setStatus(1);
@@ -224,15 +233,15 @@ window.onload = function() {
 };
 
 function show_Openning_Dialog(){
-    $.blockUI({ 
+    $.blockUI({
         message: $('#content-hidden-01'),
         css: {
-            border                  : 'none', 
-            padding                 : '15px', 
-            backgroundColor         : '#000', 
-            '-webkit-border-radius' : '10px', 
-            '-moz-border-radius'    : '10px', 
-            opacity: .9, 
+            border                  : 'none',
+            padding                 : '15px',
+            backgroundColor         : '#000',
+            '-webkit-border-radius' : '10px',
+            '-moz-border-radius'    : '10px',
+            opacity: .9,
             color: '#fff'
         }
     });
