@@ -1,0 +1,40 @@
+{
+	"ThingSpeak_channel":{
+		"id": 1,
+		"name": "my_Farm",
+		"description": "Pototype smartFarm",
+		"latitude": "40.44",
+		"longitude": "-79.996",
+		"field1": "Light",
+		"field2": "Outside Temperature",
+		"created_at": "2010-12-13T20:20:06-05:00",
+		"updated_at": "2014-02-26T12:43:04-05:00",
+		"last_entry_id": 6060628
+	},
+	"feeds":[{
+		"created_at": "2014-02-26T12:42:49-05:00",
+		"entry_id": 6060624,
+		"field1": "188",
+		"field2": "25.9"
+	},{
+		"created_at": "2014-02-26T12:43:04-05:00",
+		"entry_id": 6060625,
+		"field1": "164",
+		"field2": "25.60"
+	},{
+		"created_at": "2014-02-26T12:44:04-05:00",
+		"entry_id": 6060626,
+		"field1": "126",
+		"field2": "26.00"
+	},{
+		"created_at": "2014-02-26T12:45:04-05:00",
+		"entry_id": 6060627,
+		"field1": "120",
+		"field2": "26.45"
+	},{
+		"created_at": "2014-02-26T12:46:04-05:00",
+		"entry_id": 6060628,
+		"field1": "130",
+		"field2": "24.22"
+	}]
+}

@@ -1,0 +1,1403 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"data",
+				"dataset"
+			],
+			[
+				"padd",
+				"padding-right"
+			],
+			[
+				"op",
+				"optionSensor2"
+			],
+			[
+				"pr",
+				"print"
+			],
+			[
+				"endD",
+				"endDate"
+			],
+			[
+				"con",
+				"conditions"
+			],
+			[
+				"le",
+				"length"
+			],
+			[
+				"sen",
+				"sensorID"
+			],
+			[
+				"option",
+				"optionSensor"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"te",
+				"text"
+			],
+			[
+				"co",
+				"conditions"
+			],
+			[
+				"margin",
+				"margin-left"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
+				"set",
+				"setON"
+			],
+			[
+				"Re",
+				"RelayComponent"
+			],
+			[
+				"stats",
+				"status"
+			],
+			[
+				"font-s",
+				"font-size"
+			],
+			[
+				"mar",
+				"margin-right"
+			],
+			[
+				"dateP",
+				"datepicker"
+			],
+			[
+				"on",
+				"onSelect"
+			],
+			[
+				"st",
+				"startDate"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"date",
+				"datePart"
+			],
+			[
+				"re",
+				"result"
+			],
+			[
+				"get",
+				"getYear"
+			],
+			[
+				"border-",
+				"border-top-color"
+			],
+			[
+				"paddin",
+				"padding-left"
+			],
+			[
+				"lo",
+				"loadGraph"
+			],
+			[
+				"ค่า",
+				"ค่าน้ำ"
+			],
+			[
+				"s",
+				"student"
+			],
+			[
+				"y-",
+				"y-axis-1"
+			],
+			[
+				"fon",
+				"font-family"
+			],
+			[
+				"font-",
+				"font-style"
+			],
+			[
+				"vale",
+				"value"
+			],
+			[
+				"ret",
+				"return"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"onC",
+				"onchange\tAttr"
+			],
+			[
+				"in",
+				"input\tTag"
+			],
+			[
+				"bo",
+				"border-color"
+			],
+			[
+				"th",
+				"thead\tTag"
+			],
+			[
+				"Confirm",
+				"confirmation"
+			],
+			[
+				"hae",
+				"head\tTag"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/C/Program Files/Apache Group/Tomcat 4.1/webapps/iot/index.html",
+			"settings":
+			{
+				"buffer_size": 5743,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "device.js",
+			"settings":
+			{
+				"buffer_size": 7387,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "config.js",
+			"settings":
+			{
+				"buffer_size": 8657,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Program Files/Apache Group/Tomcat 4.1/webapps/chart/samples/line.html",
+			"settings":
+			{
+				"buffer_size": 8080,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Program Files/Apache Group/Tomcat 4.1/webapps/iot/DATA/data.json",
+			"settings":
+			{
+				"buffer_size": 405,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Program Files/Apache Group/Tomcat 4.1/webapps/iot/DATA/feed.json",
+			"settings":
+			{
+				"buffer_size": 15057,
+				"encoding": "UTF-8",
+				"line_ending": "Windows",
+				"name": "{\"channel\":{\"id\":62976,\"name\":\"iDuck\",\"description"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 342.0,
+		"last_filter": "Package Control: ",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"i",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"javascr",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"jso",
+				"Set Syntax: JSON"
+			]
+		],
+		"width": 510.0
+	},
+	"console":
+	{
+		"height": 123.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib.request,os,hashlib; h = '261dd1222b4693ce6d4f85f9c827ac06' + '6d5ab8ebdd020086947172a8a1356bb6'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/chart",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/chart/samples",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/iot",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/iot/DATA",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/iot/js",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/treasuryAdvance",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/treasuryAdvance/css",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/treasuryAdvance/css/images",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/treasuryAdvance/script",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/treasuryAdvance/test"
+	],
+	"file_history":
+	[
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/iot/js/device.js",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/iot/index.html",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/iot/css/style.css",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/iot/js/config.js",
+		"/D/Users/7I110029/Desktop/script.js",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/iot/DATA/data.json",
+		"/D/Users/7I110029/Desktop/inse.html",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/iot/js/connection.js",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/iot/js/script.js",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/iot/js/script.bkk",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/iot/js/lib/raphael-2.1.4.min.js",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/treasuryAdvance/summary_report_CSAtoExcel.jsp",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/treasuryAdvance/summary_report_csa.jsp",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/iot/test.html",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/treasuryPDF2/report/jgbBorrowingReport.jsp",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/testA/index.jsp",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/treasuryPDF/src/TreasuryReportCenter.java",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/treasuryPDF2/processSwiftMessage.jsp",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/treasuryPDF/src/TreasurySwiftCenter.java",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/treasuryPDF/src/TreasuryUploadCenter.java",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/treasuryPDF2/login_tmp.jsp",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/treasuryAdvance/login.jsp",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/treasuryAdvance/login_tmp.jsp",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/treasuryAdvance/swift_CSA_import_file.jsp",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/treasuryAdvance/headerMenu.jsp",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/treasuryAdvance/headerMenu_t.jsp",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/treasuryAdvance/headerMenu_3.jsp",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/treasuryAdvance/main.jsp",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/treasuryAdvance/headerMenu2.jsp",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/iot/js/configLineChart.js",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/react/react-15.3.0/examples/basic/index.html",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/iot/js/device2.js",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/testA/upload.jsp",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/testA/uploadMulti.jsp",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/testA/upload2.jsp",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/iot/index3.html",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/iot/js/lib/scriptMQTT.js",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/iot/DATA/command.json",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/iot/DATA/thingspeak.json",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/iot/js/lib/justgage.js",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/ma/index.html",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/iot/DATA/device.config.json",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/iot/esp.html",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/confirmation/f_check_document_summary.jsp",
+		"//172.19.26.205/Workspace2/TreasuryAdvance/src/inhouse/upload/report/IMBaseReport.java",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/treasuryAdvance/test/summary_report_CSAtoExcel.jsp",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/treasuryAdvance/js/jquery-ui.js",
+		"/D/share/jquery-ui-1.12.0.custom/jquery-ui-1.12.0.custom/jquery-ui.css",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/treasuryAdvance/css/treasuryStyle.css",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/treasuryAdvance/js/calendarPicker.js",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/confirmation/js/timepicker.js",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/TreasuryAdvance/summary_report_csa.jsp",
+		"/D/Users/7I110029/Desktop/summary_report_csa.jsp",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/confirmation/WEB-INF/classes/sybase/connect/ParameterDB.java",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/treasuryAdvance/WEB-INF/classes/sybase/connect/ParameterDB.java",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/confirmation/summary_report_csa.jsp",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/confirmation/WEB-INF/classes/sybase/connect/ParameterDB.java.bak",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/ma/testChart.html",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/ma/DATA/data.json",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/ma/js/app.js",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/ma/js/angular-chart.js",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/ma/js/chartjs-directive.js",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/ma/angular.html",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/admin.xml",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/ma/chart.html",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/ma/js06.html",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/ma/DATA/test.json",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/testA/data.json",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/testA/jsonTest.jsp",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/confirmation/testCofirmation.jsp",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/confirmation/f_check_document_detail.jsp",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/confirmation/ajax/AjaxGenPasswd.js",
+		"/M/FXconfirmation/java/confirmation/src/SierraServlet.java",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/testA/doc.jsp",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/testB/index.html",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/testB/js/docConfirm.js",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/javascript/index.html",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/confirmation/check_document_summary.jsp",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/examples/WEB-INF/classes/HelloWorldExample.java",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/testA/src/java/test/servlet/NewServlet.java",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/testA/WEB-INF/web.xml",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/testA/WEB-INF/classes/HelloWorldExample.java",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/testA/WEB-INF/classes/servletToJsp.java",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/testA/src/java/servlet/test/newServlet.java",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/testA/src/java/sybase/connect/ParameterDB.java",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/treasuryAdvance/WEB-INF/web.xml",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/examples/WEB-INF/web.xml",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/treasuryAdvance/WEB-INF/classes/TreasuryAdvance.java",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/treasuryAdvance/WEB-INF/classes/TreasuryInhouse.java",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/treasuryAdvance/WEB-INF/web_bak13JAN2016.xml",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/treasuryAdvance/WEB-INF/web.xml.bak",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/test1/index.jsp",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/treasuryAdvance/logout.jsp",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/treasuryAdvance/header.html",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/test1/WEB-INF/classes/sybase/connect/ParameterDB.java",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/test1/src/java/sybase/connect/ParameterDB.java",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/test1/WEB-INF/web.xml",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/treasuryAdvance/testConnection.jsp",
+		"/C/Program Files/Apache Software Foundation/Apache Tomcat 7.0.41/webapps/examples/index.jsp",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/testXan/index.jsp",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/testXan/WEB-INF/web.xml",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/ROOT/WEB-INF/web.xml",
+		"/C/Program Files/Apache Group/Tomcat 4.1/work/Standalone/localhost/testXan/index_jsp.java",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/examples/servlets/helloworld.html",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/examples/WEB-INF/classes/servletToJsp.java",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/examples/servlets/index.html",
+		"/C/Program Files/Apache Group/Tomcat 4.1/webapps/treasuryAdvance/cntr_covenant.jsp",
+		"/D/Users/7I110029/Documents/myLog/transport.json"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"C:\\Program Files\\Apache Group\\Tomcat 4.1\\webapps\\confirmation\\WEB-INF",
+			"C:\\Program Files\\Apache Group\\Tomcat 4.1\\webapps"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"ref",
+			"}",
+			"onclick",
+			"device",
+			"plase",
+			"show_Openning_Dialog",
+			"mqtt_topic",
+			"MQTT_connect",
+			"debug",
+			"init",
+			"em",
+			"amount ",
+			"data",
+			"right",
+			"CCY",
+			"item2",
+			"Item",
+			"_addCon",
+			"showInprocess",
+			"sentSwiftMsg",
+			"input",
+			"TreasurySwiftCenter",
+			"previewSwiftMsg",
+			"review",
+			"SwiftMessage",
+			"console",
+			"today",
+			"getUrlVar",
+			"endDate",
+			"editDate",
+			"request",
+			"response",
+			"stm",
+			"startDate",
+			"endDate",
+			"summary",
+			"summary_report",
+			"dialog",
+			"height",
+			"id",
+			"genLog",
+			"id",
+			"ID",
+			"genHTML",
+			"time_system",
+			"dot",
+			"dod",
+			"controller-device-status",
+			"datepicker",
+			"date",
+			"id",
+			"getElementById",
+			"console",
+			"gageDHT_1",
+			"Bay",
+			"endDate",
+			"title",
+			"datepicker",
+			"window",
+			"Define Counter Party",
+			"Swift CSA",
+			"product",
+			"window",
+			"request",
+			"images",
+			"onclick",
+			"dpTable",
+			"table",
+			"This is a demonstration ",
+			"usernameServer",
+			"random",
+			"randim",
+			"script",
+			"chartjs-directive.js",
+			"this",
+			"onclick",
+			"System.out",
+			"receiveByHand",
+			"receiver",
+			"dataID",
+			"put",
+			"\"",
+			"print",
+			"out",
+			"Hand",
+			"username",
+			"sql",
+			"bstmt",
+			"form",
+			"from",
+			"div",
+			"by Hand ",
+			"session",
+			"mydealno",
+			"select",
+			"bay_confirm_trans",
+			"pfnxdb",
+			"bay_confirm_trans ",
+			"pfnxdb",
+			"Update",
+			"form",
+			"for",
+			"scope",
+			"gray",
+			"form",
+			"TEST ",
+			"TEST Summary",
+			"CUSTOMER NAME ",
+			"CUSTOMER NAME",
+			"CUSTOMER NAME ",
+			"Reject by KTL",
+			"Reject by KTL ",
+			"CUSTOMER",
+			"CUSTOMER NAME ",
+			"SierraServlet",
+			"pack",
+			"sybase",
+			"TreasuryInhouse",
+			"TreasuryAdvance",
+			"TreasuryAdvance.java",
+			"TreasuryAdvance.class",
+			"GLDocument.class",
+			"GLDocument",
+			"session",
+			"DBCon",
+			"HelloWorldExample",
+			"Example",
+			"servlet"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"this.ID",
+			"id",
+			"out",
+			"'",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": true,
+		"wrap": true
+	},
+	"folders":
+	[
+		{
+			"path": "C:\\Program Files\\Apache Group\\Tomcat 4.1\\webapps"
+		}
+	],
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/C/Program Files/Apache Group/Tomcat 4.1/webapps/iot/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5743,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1419,
+								1419
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										1419,
+										1420
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/round_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										1414,
+										1415
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content"
+							],
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 137.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "device.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7387,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1169,
+								1169
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										1176,
+										1177
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/double_quote.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										1166,
+										1167
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content"
+							],
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 195.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "config.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8657,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8625,
+								8625
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										8655,
+										8656
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										8525,
+										8526
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content"
+							],
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3145.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/C/Program Files/Apache Group/Tomcat 4.1/webapps/chart/samples/line.html",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 8080,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										14,
+										15
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/angle_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										0,
+										1
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content"
+							],
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2340.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/C/Program Files/Apache Group/Tomcat 4.1/webapps/iot/DATA/data.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 405,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								65,
+								76
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										76,
+										77
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/double_quote.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										64,
+										65
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content"
+							],
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/C/Program Files/Apache Group/Tomcat 4.1/webapps/iot/DATA/feed.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 15057,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								14913,
+								14913
+							]
+						],
+						"settings":
+						{
+							"auto_name": "{\"channel\":{\"id\":62976,\"name\":\"iDuck\",\"description",
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										15054,
+										15055
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										14913,
+										14914
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content"
+							],
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
+						},
+						"translation.x": 72.0,
+						"translation.y": 1063.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 21.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "",
+	"replace":
+	{
+		"height": 38.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 230.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

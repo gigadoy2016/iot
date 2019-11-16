@@ -4,89 +4,118 @@
   <head>
     <title>Auto-adjust</title>
   	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <script src="js/angular.min.js"></script>
-    <script src="js/raphael-2.1.4.min.js"></script>
-    <script src="js/justgage.js"></script>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/script.js"></script>
 
-      <script>
-      // --------- Define variable -----------
-          var data ;
-          var config_MQTT = {
-            mqtt_server: "m11.cloudmqtt.com",
-            mqtt_websockets_port: 35507,
-            mqtt_user: "monitor",
-            mqtt_password: "123456789",
-            mqtt_topic: "DEVICE/01/status/"
-          };
+    <script src="js/lib/raphael-2.1.4.min.js"></script>
+    <script src="js/lib/jquery.js"></script>
+    <script src="js/lib/bootstrap.min.js"></script>
+    <script src="js/lib/jquery.blockUI.js"></script>
 
-          var mqtt_client = new Paho.MQTT.Client(config_MQTT.mqtt_server, config_MQTT.mqtt_websockets_port, "test");
-    //----------------------------------------
+    <script src="js/lib/Chart.js"></script>
+    <script src="js/lib/justgage.js"></script>
+    <SCRIPT src="js/lib/jquery-ui.js"></SCRIPT>
+    <script src="js/lib/scriptMQTT.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/device.js"></script>
 
-      </script>
+    <link href="css/style.css" rel="stylesheet"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/jquery-ui.css" rel="stylesheet"/>
+
+    <script type="text/javascript">
+      var DATA    = {"embedded_01":{"sensor":{"DHT22":{"id":"01","temperature":0,"humidity":0},"LDR":{"id":"01","value":0},"SoilMoisture":{
+        "id":"01","value":0}},"output":{"relay":{"id":"01","status":[0,0,0,0],"detail":"relay 4 chanel (china)"}},"date":"17/08/2016 15:13:00","location":{"lat":"test","lng":"test"}}};
+      var today   = new Date();
+      var SENSOR  = DATA.embedded_01.sensor;
+      var FEED    = null;
+
+      var jqxhr   = $.getJSON( "https://thingspeak.com/channels/62976/feed.json", function(data) {
+        FEED      = data;
+        dataFeed(data);
+        console.log("ThingSpeak.com load data success");
+        console.log(FEED);
+      }).fail(function() {
+        console.log("ThingSpeak.com => load data error");
+      });
+
+      var gage_DHT22_temperature;
+      var gage_DHT22_humidity;
+      var gage_LDT;
+      var gage_temperature;
+      var gage_ground_humidity;
+
+    </script>
   </head>
-  <body ng-controller="deviceController">
-    <div id="container">
-      <div>
-        <label>log :</label><label>{{device}}</label>
-      </div>
-      <div>
-        <label class="btn btn-warning" id="system_connection">System</label>
+  <body>
+    <div class="container" style="padding-top:10px;margin-bottom:15px;">
 
+    <!--===============================================================================-->
+    <!-- Section-1 [System Status ]                                                    -->
+    <!--===============================================================================-->
+      <div class="col-xs-12">
+          <label class="btn btn-warning" id="system_connection" style="width:7.5em;">SYSTEM</label>
+          <label class="btn btn-warning" id="device_connection" style="width:7.5em;">device</label>
+          <label style="width:40em;" id="system_warning">test</label>
+          <label style="width:11em;text-align:right;" id="date_system">date</label>
+          <label style="width:4.2em;text-align:right;font-size:2.5em;" id="time_system"></label>
+          <script type="text/javascript">
+            document.getElementById('date_system').innerHTML =$.datepicker.formatDate('d MM yy',new Date());
+          </script>
+      </div>
+
+    <!--===============================================================================-->
+    <!-- Section-2 [Gage Senesor]                                                      -->
+    <!--===============================================================================-->
+      <div class="col-xs-12 gage-panel">
+        <span class="col-xs-12 col-sm-6 col-md-3" id="gage_DHT22_temperature"></span>
+        <span class="col-xs-12 col-sm-6 col-md-3 gage-2" id="gage_DHT22_humidity"></span>
+        <span class="col-xs-12 col-sm-6 col-md-3" id="gage_LDT"></span>
+        <span class="col-xs-12 col-sm-6 col-md-3 gage-2" id="gage_ground_humidity"></span>
+      </div>
+
+    <!--===============================================================================-->
+    <!-- Section-2 [Chart Monitoring]                                                  -->
+    <!--===============================================================================-->
+      <div class="col-xs-12 col-md-6 col-lg-4">
+        <h4>Temperature Information.</h4>
+        <canvas id="temperature-monitor"></canvas>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-4">
+        <h4>Humidity Information.</h4>
+        <canvas id="humidity-monitor"></canvas>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-4">
+        <h4>Lighting. (LDT)</h4>
+        <canvas id="lighting-monitor"></canvas>
+      </div>
+
+    <!--===============================================================================-->
+    <!-- Section-3 [Control pannel]                                                    -->
+    <!--===============================================================================-->
+      <div class="col-xs-12 controller-panel" style="padding:2px">
+        <div class="col-xs-12 col-sm-6 col-lg-3 controller-device btn-group" id="relayController_0"></div>
+        <div class="col-xs-12 col-sm-6 col-lg-3 controller-device btn-group" id="relayController_1"></div>
+        <div class="col-xs-12 col-sm-6 col-lg-3 controller-device btn-group" id="relayController_2"></div>
+        <div class="col-xs-12 col-sm-6 col-lg-3 controller-device btn-group" id="relayController_3"></div>
+        <script type="text/javascript">
+
+          var relay ={};
+          relay[0] = new RelayComponent("relayController_0",0);
+          relay[1] = new RelayComponent("relayController_1",1);
+          relay[2] = new RelayComponent("relayController_2",2);
+          relay[3] = new RelayComponent("relayController_3",3); 
+
+        </script>
       </div>
     </div>
-    <div>
-      <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="http://api.thingspeak.com/channels/62976/charts/1?width=450&height=260&dynamic=true&title=iDuck" ></iframe>
-      <div id="gageDHT_1"></div>
-    </div>
-    <div>
-      <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/62976/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line"></iframe>
-      <div id="gageDHT_2"></div>
+
+  <!--===============================================================================-->
+  <!-- Section-4 [Hiddien pannel]                                                    -->
+  <!--===============================================================================-->
+    <div id="content-hidden-01" style="display:none">
+      <h4 id="system_info">Please wait...</h4>
     </div>
     <script>
-      window.onload = function(){
-        var gageDHT_1 = new JustGage({
-          id: "gageDHT_1",
-          value: 40,
-          min: 20,
-          max: 50,
-          title: "°C",
-          label: "อุณหภูมิ"
-        });
-        var gageDHT_2 = new JustGage({
-          id: "gageDHT_2",
-          value: 40,
-          min: 20,
-          max: 50,
-          title: "%",
-          label: "ความชื้น"
-        });
 
-  			mqtt_client.connect({
-  				useSSL: true,
-  				userName: config_MQTT.mqtt_user,
-  				password: config_MQTT.mqtt_password,
-  				onSuccess: function() {			// Once a connection has been made, make a subscription and send a message.
-  					console.log("onConnect MQTT subscribe");
-  					mqtt_client.subscribe(config.mqtt_topic);
-  				},
-  				onFailure: function(e) {
-            console.log("MQTT Connection losed");
-  			 		console.log(e);
-  				}
-  			});
-
-        mqtt_client.onMessageArrived = function(message) {
-          messageSubscrip = JSON.parse(message.payloadString);
-          console.log(message.payloadString);
-        }
-      }
     </script>
   </body>
 </html>
